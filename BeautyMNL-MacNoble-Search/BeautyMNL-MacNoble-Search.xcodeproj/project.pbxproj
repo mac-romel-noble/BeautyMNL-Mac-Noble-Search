@@ -11,9 +11,10 @@
 		F93DBEEE2897BDCC009DA87A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBEED2897BDCC009DA87A /* AppDelegate.swift */; };
 		F93DBEF02897BDCC009DA87A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBEEF2897BDCC009DA87A /* SceneDelegate.swift */; };
 		F93DBEF22897BDCC009DA87A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBEF12897BDCC009DA87A /* ViewController.swift */; };
-		F93DBEF52897BDCC009DA87A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93DBEF32897BDCC009DA87A /* Main.storyboard */; };
 		F93DBEF72897BDCE009DA87A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93DBEF62897BDCE009DA87A /* Assets.xcassets */; };
 		F93DBEFA2897BDCE009DA87A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93DBEF82897BDCE009DA87A /* LaunchScreen.storyboard */; };
+		F93DBF032897C144009DA87A /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF022897C144009DA87A /* SearchTableViewController.swift */; };
+		F93DBF062897C21D009DA87A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF052897C21D009DA87A /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +25,11 @@
 		F93DBEED2897BDCC009DA87A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93DBEEF2897BDCC009DA87A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F93DBEF12897BDCC009DA87A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F93DBEF42897BDCC009DA87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F93DBEF62897BDCE009DA87A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93DBEF92897BDCE009DA87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93DBEFB2897BDCE009DA87A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93DBF022897C144009DA87A /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		F93DBF052897C21D009DA87A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				505BA6941F36F5004B7DE3A6 /* Pods-BeautyMNL-MacNoble-Search.debug.xcconfig */,
 				B209A7BCB02267B5F82D54FF /* Pods-BeautyMNL-MacNoble-Search.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +82,32 @@
 		F93DBEEC2897BDCC009DA87A /* BeautyMNL-MacNoble-Search */ = {
 			isa = PBXGroup;
 			children = (
+				F93DBF012897C131009DA87A /* UIComponents */,
 				F93DBEED2897BDCC009DA87A /* AppDelegate.swift */,
 				F93DBEEF2897BDCC009DA87A /* SceneDelegate.swift */,
 				F93DBEF12897BDCC009DA87A /* ViewController.swift */,
-				F93DBEF32897BDCC009DA87A /* Main.storyboard */,
 				F93DBEF62897BDCE009DA87A /* Assets.xcassets */,
 				F93DBEF82897BDCE009DA87A /* LaunchScreen.storyboard */,
 				F93DBEFB2897BDCE009DA87A /* Info.plist */,
 			);
 			path = "BeautyMNL-MacNoble-Search";
+			sourceTree = "<group>";
+		};
+		F93DBF012897C131009DA87A /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F93DBF042897C20C009DA87A /* SearchController */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F93DBF042897C20C009DA87A /* SearchController */ = {
+			isa = PBXGroup;
+			children = (
+				F93DBF022897C144009DA87A /* SearchTableViewController.swift */,
+				F93DBF052897C21D009DA87A /* SearchViewModel.swift */,
+			);
+			path = SearchController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +172,6 @@
 			files = (
 				F93DBEFA2897BDCE009DA87A /* LaunchScreen.storyboard in Resources */,
 				F93DBEF72897BDCE009DA87A /* Assets.xcassets in Resources */,
-				F93DBEF52897BDCC009DA87A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,22 +225,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93DBEF22897BDCC009DA87A /* ViewController.swift in Sources */,
+				F93DBF062897C21D009DA87A /* SearchViewModel.swift in Sources */,
 				F93DBEEE2897BDCC009DA87A /* AppDelegate.swift in Sources */,
 				F93DBEF02897BDCC009DA87A /* SceneDelegate.swift in Sources */,
+				F93DBF032897C144009DA87A /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F93DBEF32897BDCC009DA87A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F93DBEF42897BDCC009DA87A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F93DBEF82897BDCE009DA87A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +373,6 @@
 				INFOPLIST_FILE = "BeautyMNL-MacNoble-Search/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -392,7 +402,6 @@
 				INFOPLIST_FILE = "BeautyMNL-MacNoble-Search/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
