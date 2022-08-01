@@ -72,13 +72,13 @@ private extension SearchTableViewController {
     }
     
     func setupSearch() {
-//        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.hidesSearchBarWhenScrolling = false
         
-//        definesPresentationContext = true
+        definesPresentationContext = true
         
         navigationItem.searchController = searchController
-//        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.hidesNavigationBarDuringPresentation = true
     }
     
     func setupBindings() {
