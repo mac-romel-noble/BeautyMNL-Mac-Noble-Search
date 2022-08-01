@@ -7,5 +7,6 @@ target 'BeautyMNL-MacNoble-Search' do
   pod 'RealmSwift', '~>10'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
-
+  pod 'Kingfisher', '~> 7.0'
+  pod 'LBTATools'
 end

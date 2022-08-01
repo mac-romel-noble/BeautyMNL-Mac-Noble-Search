@@ -49,8 +49,8 @@ private extension SearchTableViewController {
     
     func setupTable() {
         tableView.register(
-            UITableViewCell.self,
-            forCellReuseIdentifier: UITableViewCell.description()
+            SearchCell.self,
+            forCellReuseIdentifier: SearchCell.description()
         )
         tableView.keyboardDismissMode = .onDrag
     }
@@ -72,5 +72,43 @@ private extension SearchTableViewController {
             .subscribe(onNext: { [weak self] (searchString) in
                 self?.viewModel.search(searchString)
             }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension SearchTableViewController {
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        return 10
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SearchCell.description(),
+            for: indexPath
+        ) as? SearchCell else {
+            fatalError("Failed to dequeue cell.")
+        }
+        
+        cell.viewModel = MovieCellViewModel()
+        
+        return cell
+    }
+}
+
+// MARK: - UIT
+
+extension SearchTableViewController {
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        #warning("handle tap")
     }
 }
