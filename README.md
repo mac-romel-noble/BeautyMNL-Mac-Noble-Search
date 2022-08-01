@@ -23,3 +23,8 @@ BeautyMnl assessment code exam for Mac Romel Noble
 
 ### `RxSwift`
 * Powerful tool for reactive programming but in this project used simply to debounce keystrokes from the searchbar.
+
+## Notable features
+* Clean UI
+* Localized formats for prices and dates
+* Video playback of movie trailers
