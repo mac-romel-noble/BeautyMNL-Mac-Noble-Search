@@ -11,9 +11,11 @@ import RxCocoa
 
 class SearchTableViewController: UITableViewController {
     
+    // MARK: - Private properties
+    
     private let viewModel: SearchViewModel
     
-    // MARK: - Private properties
+    private let spinner = UIActivityIndicatorView(style: .large)
     
     internal var searchController = UISearchController()
     private var disposeBag = DisposeBag()
@@ -45,6 +47,18 @@ private extension SearchTableViewController {
         setupTable()
         setupSearch()
         setupBindings()
+        setupSpinner()
+    }
+    
+    func setupSpinner() {
+        spinner.hidesWhenStopped = true
+        spinner.stopAnimating()
+        view.addSubview(spinner)
+        spinner.centerInSuperview()
+        spinner.transform = CGAffineTransform(
+            translationX: 0,
+            y: -100
+        )
     }
     
     func setupTable() {
@@ -70,10 +84,19 @@ private extension SearchTableViewController {
             self?.tableView.reloadData()
         }
         
+        viewModel.onLoadingChanged = { [weak self] isLoading in
+            if isLoading {
+                self?.spinner.startAnimating()
+            } else {
+                self?.spinner.stopAnimating()
+            }
+        }
+        
         searchController.searchBar.rx.text.orEmpty
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] (searchString) in
+                guard !searchString.isEmpty else { return }
                 self?.viewModel.search(searchString)
             }).disposed(by: disposeBag)
     }
