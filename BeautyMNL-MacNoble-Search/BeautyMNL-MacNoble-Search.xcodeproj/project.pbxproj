@@ -17,6 +17,8 @@
 		F93DBF062897C21D009DA87A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF052897C21D009DA87A /* SearchViewModel.swift */; };
 		F93DBF082897C76A009DA87A /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF072897C76A009DA87A /* SearchCell.swift */; };
 		F93DBF0C2897CF5A009DA87A /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF0B2897CF5A009DA87A /* SearchCellViewModel.swift */; };
+		F93DBF102897D72A009DA87A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF0F2897D72A009DA87A /* Item.swift */; };
+		F93DBF132897D7ED009DA87A /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF122897D7ED009DA87A /* ItemRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F93DBF052897C21D009DA87A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F93DBF072897C76A009DA87A /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		F93DBF0B2897CF5A009DA87A /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
+		F93DBF0F2897D72A009DA87A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F93DBF122897D7ED009DA87A /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,9 @@
 		F93DBEEC2897BDCC009DA87A /* BeautyMNL-MacNoble-Search */ = {
 			isa = PBXGroup;
 			children = (
+				F93DBF112897D7CF009DA87A /* Repository */,
+				F93DBF0E2897D6A9009DA87A /* Models */,
+				F93DBF0D2897D67A009DA87A /* Coordinator */,
 				F93DBF012897C131009DA87A /* UIComponents */,
 				F93DBEED2897BDCC009DA87A /* AppDelegate.swift */,
 				F93DBEEF2897BDCC009DA87A /* SceneDelegate.swift */,
@@ -122,6 +129,29 @@
 				F93DBF0B2897CF5A009DA87A /* SearchCellViewModel.swift */,
 			);
 			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		F93DBF0D2897D67A009DA87A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F93DBF0E2897D6A9009DA87A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F93DBF0F2897D72A009DA87A /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F93DBF112897D7CF009DA87A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F93DBF122897D7ED009DA87A /* ItemRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +271,9 @@
 				F93DBEF22897BDCC009DA87A /* ViewController.swift in Sources */,
 				F93DBF082897C76A009DA87A /* SearchCell.swift in Sources */,
 				F93DBF062897C21D009DA87A /* SearchViewModel.swift in Sources */,
+				F93DBF132897D7ED009DA87A /* ItemRepository.swift in Sources */,
 				F93DBEEE2897BDCC009DA87A /* AppDelegate.swift in Sources */,
+				F93DBF102897D72A009DA87A /* Item.swift in Sources */,
 				F93DBEF02897BDCC009DA87A /* SceneDelegate.swift in Sources */,
 				F93DBF032897C144009DA87A /* SearchTableViewController.swift in Sources */,
 				F93DBF0C2897CF5A009DA87A /* SearchCellViewModel.swift in Sources */,
