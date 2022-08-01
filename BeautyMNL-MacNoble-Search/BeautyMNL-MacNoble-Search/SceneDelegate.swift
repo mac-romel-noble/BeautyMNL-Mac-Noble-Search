@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    var mainCoordinator: SearchCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,14 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewModel = ItunesSearchViewModel(ItunesRepository())
-        let viewController = SearchTableViewController(viewModel)
+        let navigationController = UINavigationController()
         
-        let navigation = UINavigationController(
-            rootViewController: viewController
-        )
+        let itunesCoordinator = ItunesMovieSearchCoordinator(navigationController)
+        itunesCoordinator.start()
+        mainCoordinator = itunesCoordinator
         
-        window.rootViewController = navigation
+        window.rootViewController = navigationController
         
         self.window = window
         window.makeKeyAndVisible()

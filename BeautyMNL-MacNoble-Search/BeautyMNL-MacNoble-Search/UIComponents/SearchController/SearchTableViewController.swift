@@ -11,6 +11,8 @@ import RxCocoa
 
 class SearchTableViewController: UITableViewController {
     
+    var coordinator: SearchCoordinator?
+    
     // MARK: - Private properties
     
     private let viewModel: SearchViewModel
@@ -70,13 +72,13 @@ private extension SearchTableViewController {
     }
     
     func setupSearch() {
-        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        definesPresentationContext = true
+//        definesPresentationContext = true
         
         navigationItem.searchController = searchController
-        searchController.hidesNavigationBarDuringPresentation = true
+//        searchController.hidesNavigationBarDuringPresentation = true
     }
     
     func setupBindings() {
@@ -136,6 +138,6 @@ extension SearchTableViewController {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        #warning("handle tap")
+        coordinator?.didSelectItem(at: indexPath.row)
     }
 }

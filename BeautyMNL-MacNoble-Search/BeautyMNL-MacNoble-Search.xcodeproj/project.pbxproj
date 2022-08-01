@@ -19,6 +19,8 @@
 		F93DBF0C2897CF5A009DA87A /* SearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF0B2897CF5A009DA87A /* SearchCellViewModel.swift */; };
 		F93DBF102897D72A009DA87A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF0F2897D72A009DA87A /* Item.swift */; };
 		F93DBF132897D7ED009DA87A /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF122897D7ED009DA87A /* ItemRepository.swift */; };
+		F93DBF162897EE97009DA87A /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF152897EE97009DA87A /* VideoPlayerController.swift */; };
+		F93DBF182897F08A009DA87A /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93DBF172897F08A009DA87A /* SearchCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F93DBF0B2897CF5A009DA87A /* SearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellViewModel.swift; sourceTree = "<group>"; };
 		F93DBF0F2897D72A009DA87A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F93DBF122897D7ED009DA87A /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		F93DBF152897EE97009DA87A /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
+		F93DBF172897F08A009DA87A /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				F93DBF042897C20C009DA87A /* SearchController */,
+				F93DBF152897EE97009DA87A /* VideoPlayerController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 		F93DBF0D2897D67A009DA87A /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				F93DBF172897F08A009DA87A /* SearchCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -270,7 +276,9 @@
 			files = (
 				F93DBEF22897BDCC009DA87A /* ViewController.swift in Sources */,
 				F93DBF082897C76A009DA87A /* SearchCell.swift in Sources */,
+				F93DBF182897F08A009DA87A /* SearchCoordinator.swift in Sources */,
 				F93DBF062897C21D009DA87A /* SearchViewModel.swift in Sources */,
+				F93DBF162897EE97009DA87A /* VideoPlayerController.swift in Sources */,
 				F93DBF132897D7ED009DA87A /* ItemRepository.swift in Sources */,
 				F93DBEEE2897BDCC009DA87A /* AppDelegate.swift in Sources */,
 				F93DBF102897D72A009DA87A /* Item.swift in Sources */,

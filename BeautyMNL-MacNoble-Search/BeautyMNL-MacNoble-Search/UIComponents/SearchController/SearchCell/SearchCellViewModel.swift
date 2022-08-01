@@ -12,6 +12,7 @@ protocol SearchCellViewModel {
     var price: String? { get }
     var subtitle: String { get }
     var thumbURL: URL? { get }
+    var videoURL: URL? { get }
 }
 
 class MovieCellViewModel {
@@ -63,5 +64,9 @@ extension MovieCellViewModel: SearchCellViewModel {
     
     var thumbURL: URL? {
         item.artworkUrl100
+    }
+    
+    var videoURL: URL? {
+        item.previewUrl
     }
 }
