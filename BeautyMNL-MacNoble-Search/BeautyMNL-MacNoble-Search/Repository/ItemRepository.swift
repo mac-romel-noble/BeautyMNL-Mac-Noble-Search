@@ -18,7 +18,7 @@ struct ItunesRepository: ItemRepository {
         }
         
         let queryItems = [
-            URLQueryItem(name: "term", value: "searchString"),
+            URLQueryItem(name: "term", value: searchString),
             URLQueryItem(name: "media", value: "movie")
         ]
         

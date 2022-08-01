@@ -66,6 +66,10 @@ private extension SearchTableViewController {
     }
     
     func setupBindings() {
+        viewModel.onReload = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
         searchController.searchBar.rx.text.orEmpty
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -82,7 +86,7 @@ extension SearchTableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 10
+        return viewModel.items.count
     }
     
     override func tableView(
@@ -96,7 +100,7 @@ extension SearchTableViewController {
             fatalError("Failed to dequeue cell.")
         }
         
-        cell.viewModel = MovieCellViewModel()
+        cell.viewModel = viewModel.items[indexPath.row]
         
         return cell
     }

@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewModel = ItunesSearchViewModel()
+        let viewModel = ItunesSearchViewModel(ItunesRepository())
         let viewController = SearchTableViewController(viewModel)
         
         let navigation = UINavigationController(

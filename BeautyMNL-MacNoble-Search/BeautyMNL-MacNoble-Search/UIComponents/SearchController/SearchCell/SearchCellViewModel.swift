@@ -16,7 +16,15 @@ protocol SearchCellViewModel {
 
 class MovieCellViewModel {
     
+    private let item: Item
+    
+    init(_ item: Item) {
+        self.item = item
+    }
+    
 }
+
+// MARK: - SearchCellViewModel
 
 extension MovieCellViewModel: SearchCellViewModel {
     var title: String {
