@@ -52,8 +52,10 @@ private extension SearchCell {
         titleLabel.minimumScaleFactor = 0.8
         priceLabel.text = viewModel?.price
         subtitleLabel.text = viewModel?.subtitle
-        thumbImageView.kf.setImage(with: viewModel?.thumbURL)
-        #warning("add placeholder image here")
+        thumbImageView.kf.setImage(
+            with: viewModel?.thumbURL,
+            placeholder: UIImage(systemName: "photo")
+        )
     }
     
     func setupMainStack() {
@@ -91,6 +93,8 @@ private extension SearchCell {
         thumbImageView.layer.cornerRadius = 10
         thumbImageView.layer.masksToBounds = true
         thumbImageView.contentMode = .scaleAspectFill
+        thumbImageView.kf.indicatorType = .activity
+        thumbImageView.tintColor = .systemGray
         
         mainStack.addArrangedSubview(thumbImageView)
     }
