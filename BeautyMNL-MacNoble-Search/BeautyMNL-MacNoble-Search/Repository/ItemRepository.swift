@@ -39,7 +39,9 @@ struct ItunesRepository: ItemRepository {
             }
             
             do {
-                let decoded = try JSONDecoder().decode(SearchResult.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let decoded = try decoder.decode(SearchResult.self, from: data)
                 completionHandler(decoded.results)
             } catch {
                 assertionFailure("Decoding error: \(error.localizedDescription)")

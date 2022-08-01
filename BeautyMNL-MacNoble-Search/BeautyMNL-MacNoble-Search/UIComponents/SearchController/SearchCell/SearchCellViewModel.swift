@@ -28,18 +28,40 @@ class MovieCellViewModel {
 
 extension MovieCellViewModel: SearchCellViewModel {
     var title: String {
-        "Title 123"
+        item.trackName
     }
     
     var price: String? {
-        "$ 4.99"
+        guard let trackPrice = item.trackPrice else { return nil }
+        let number = NSNumber(value: trackPrice)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter.string(from: number)
     }
     
     var subtitle: String {
-        "Subtitle test"
+        let genre = item.primaryGenreName
+        
+        let releaseDate: String? = {
+            guard let releaseDate = item.releaseDate else { return nil }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy"
+            return dateFormatter.string(from: releaseDate)
+        }()
+        
+        let duration: String? = {
+            guard let duration = item.trackTimeMillis else { return nil }
+            let timeInterval: TimeInterval = Double(duration) * 0.001
+            let formatter = DateComponentsFormatter()
+            formatter.allowedUnits = [.hour, .minute]
+            return formatter.string(from: timeInterval)
+        }()
+        
+        return [genre, releaseDate, duration].compactMap({ $0 }).joined(separator: " • ")
     }
     
     var thumbURL: URL? {
-        URL(string: "https://is4-ssl.mzstatic.com/image/thumb/Video124/v4/30/89/2d/30892d85-8849-79c7-ee97-aa14b9145f77/pr_source.lsr/100x100bb.jpg")
+        item.artworkUrl100
     }
 }

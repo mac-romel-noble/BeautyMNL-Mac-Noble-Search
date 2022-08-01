@@ -17,7 +17,7 @@ struct Item: Codable {
     let artworkUrl60: URL?
     let artworkUrl100: URL?
     let primaryGenreName: String?
-    let releaseDate: String
+    let releaseDate: Date?
     let trackTimeMillis: Int?
     let longDescription: String?
     let previewUrl: URL?

@@ -48,6 +48,8 @@ private extension SearchCell {
     
     func setupViewModel() {
         titleLabel.text = viewModel?.title
+        titleLabel.numberOfLines = 2
+        titleLabel.minimumScaleFactor = 0.8
         priceLabel.text = viewModel?.price
         subtitleLabel.text = viewModel?.subtitle
         thumbImageView.kf.setImage(with: viewModel?.thumbURL)
